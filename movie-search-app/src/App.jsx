@@ -1,4 +1,5 @@
 
+import SearchBar from './components/SearchBar';
 
 import viteLogo from './assets/vite.svg'
 
@@ -6,7 +7,10 @@ import './App.css'
 
 function App() {
   return (
-    <h1>Movie Search App</h1>
+    
+    <div>
+      <SearchBar />
+    </div>
   );
 }
 
