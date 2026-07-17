@@ -15,50 +15,27 @@ function App(){
         error,
         fetchMovies
     } = useMovies();
-
-
-
     return(
-
         <div className="app-container">
-
-
             <Header/>
-
-
             <main className="app-main">
-
                 <SearchBar 
                     onSearch={fetchMovies}
                 />
-
-
                 {loading && 
                     <h2 className="status-message">
                         Loading...
                     </h2>
                 }
-
-
-
                 {error &&
                     <h2 className="status-message error-message">
                         {error}
                     </h2>
                 }
-
-
-
                 <MovieList movies={movies}/>
-
-
             </main>
-
-
         </div>
-
     )
-
 }
 
 
