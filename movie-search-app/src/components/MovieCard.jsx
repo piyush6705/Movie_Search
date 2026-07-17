@@ -1,4 +1,6 @@
-  const PLACEHOLDER_POSTER =
+import "./MovieCard.css";
+
+const PLACEHOLDER_POSTER =
     "https://placehold.co/300x450?text=No+Poster";
 
 function MovieCard({ movie }) {
