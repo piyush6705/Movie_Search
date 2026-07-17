@@ -1,11 +1,14 @@
 
 function MovieList({ movies }) {
-  console.log(movies);
 
   return (
-    <div>
-      Movie List
-    </div>
+    <>
+      {movies && movies.map((movie) => (
+        <div key={movie.imdbID}>
+          <h3>{movie.Title}</h3>
+        </div>
+      ))}
+    </>
   );
 }
 
