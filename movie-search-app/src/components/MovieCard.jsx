@@ -20,7 +20,13 @@ function MovieCard({ movie }) {
 
       <p><strong>Type:</strong> {movie.Type}</p>
 
-      <p><strong>IMDb ID:</strong> {movie.imdbID}</p>
+      <a
+        href={`https://www.imdb.com/title/${movie.imdbID}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View on IMDb
+      </a>
 
     </div>
   );
