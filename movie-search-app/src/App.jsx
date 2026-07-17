@@ -17,8 +17,8 @@ function App() {
 
       // Search movies
       const response = await fetch(
-        `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`
-      );
+  `https://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm)}`
+);
 
       const data = await response.json();
 
@@ -53,15 +53,21 @@ function App() {
   }
 
   return (
-    <>
-      <SearchBar onSearch={handleSearch} />
+    <div className="app-container">
+      <header className="app-header">
+        <h1 className="app-title">Movie Search App</h1>
+      </header>
 
-      {loading && <h2>Loading...</h2>}
+      <main className="app-main">
+        <SearchBar onSearch={handleSearch} />
 
-      {error && <h2>{error}</h2>}
+        {loading && <h2 className="status-message">Loading...</h2>}
 
-      <MovieList movies={movies} />
-    </>
+        {error && <h2 className="status-message error-message">{error}</h2>}
+
+        <MovieList movies={movies} />
+      </main>
+    </div>
   );
 }
 
